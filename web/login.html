@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Password Generator</title>
+    <style>
+        body { font-family: Arial; background:#f4f4f4; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
+        .box { background:white; padding:40px; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.2); width:350px; }
+        input[type=text], input[type=password] { width:100%; padding:12px; margin:10px 0; border:1px solid #ccc; border-radius:5px; box-sizing:border-box; }
+        button { width:100%; padding:12px; background:#667eea; color:white; border:none; border-radius:5px; font-size:16px; cursor:pointer; }
+        button:hover { background:#5a6fd8; }
+        .link { text-align:center; margin-top:15px; }
+        .error { color:red; text-align:center; }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>Login</h2>
+    <form action="login" method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <% if(request.getParameter("error") != null) { %>
+    <p class="error">Invalid username or password!</p>
+    <% } %>
+    <% if(request.getParameter("reg") != null) { %>
+    <p style="color:green; text-align:center;">Registration successful! Please login.</p>
+    <% } %>
+    <div class="link">
+        <a href="register.html">Don't have an account? Register</a><br><br>
+        <a href="index.html">← Back to Home</a>
+    </div>
+</div>
+</body>
+</html>
