@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <title>Login - Password Generator</title>
     <style>
-        body { font-family: Arial; background:#f4f4f4; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
-        .box { background:white; padding:40px; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.2); width:350px; }
-        input[type=text], input[type=password] { width:100%; padding:12px; margin:10px 0; border:1px solid #ccc; border-radius:5px; box-sizing:border-box; }
-        button { width:100%; padding:12px; background:#667eea; color:white; border:none; border-radius:5px; font-size:16px; cursor:pointer; }
+        body { font-family: Arial; background:#f4f4f4;
+               display:flex; justify-content:center; align-items:center;
+               height:100vh; margin:0; }
+        .box { background:white; padding:40px; border-radius:10px;
+               box-shadow:0 10px 30px rgba(0,0,0,0.2); width:350px; }
+        input[type=text], input[type=password] {
+            width:100%; padding:12px; margin:10px 0;
+            border:1px solid #ccc; border-radius:5px; box-sizing:border-box;
+        }
+        button {
+            width:100%; padding:12px; background:#667eea; color:white;
+            border:none; border-radius:5px; font-size:16px; cursor:pointer;
+        }
         button:hover { background:#5a6fd8; }
         .link { text-align:center; margin-top:15px; }
-        .msg { text-align:center; margin:15px 0; padding:10px; border-radius:5px; }
+        .msg { text-align:center; margin:15px 0;
+               padding:10px; border-radius:5px; }
         .error { background:#ffebee; color:#c62828; }
         .success { background:#e8f5e9; color:#2e7d32; }
     </style>
@@ -24,9 +34,12 @@
         <button type="submit">Login</button>
     </form>
 
-    <!-- Messages shown using JavaScript (works in .html files) -->
-    <div id="errorMsg" class="msg error" style="display:none;">Invalid username or password!</div>
-    <div id="successMsg" class="msg success" style="display:none;">Registration successful! Please login.</div>
+    <div id="errorMsg" class="msg error" style="display:none;">
+        Invalid username or password!
+    </div>
+    <div id="successMsg" class="msg success" style="display:none;">
+        Registration successful! Please login.
+    </div>
 
     <div class="link">
         <a href="register.html">Don't have an account? Register</a><br><br>
@@ -35,7 +48,6 @@
 </div>
 
 <script>
-    // Read URL parameters and show messages
     const params = new URLSearchParams(window.location.search);
     if (params.get('error')) {
         document.getElementById('errorMsg').style.display = 'block';

@@ -4,25 +4,40 @@
     <meta charset="UTF-8">
     <title>Register - Password Generator</title>
     <style>
-        body { font-family: Arial; background:#f4f4f4; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
-        .box { background:white; padding:40px; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.2); width:350px; }
-        input[type=text], input[type=password] { width:100%; padding:12px; margin:10px 0; border:1px solid #ccc; border-radius:5px; box-sizing:border-box; }
-        button { width:100%; padding:12px; background:#764ba2; color:white; border:none; border-radius:5px; font-size:16px; cursor:pointer; }
+        body { font-family: Arial; background:#f4f4f4;
+               display:flex; justify-content:center; align-items:center;
+               height:100vh; margin:0; }
+        .box { background:white; padding:40px; border-radius:10px;
+               box-shadow:0 10px 30px rgba(0,0,0,0.2); width:350px; }
+        input[type=text], input[type=password] {
+            width:100%; padding:12px; margin:10px 0;
+            border:1px solid #ccc; border-radius:5px; box-sizing:border-box;
+        }
+        button {
+            width:100%; padding:12px; background:#764ba2; color:white;
+            border:none; border-radius:5px; font-size:16px; cursor:pointer;
+        }
         button:hover { background:#5a3d7e; }
         .link { text-align:center; margin-top:15px; }
-        .msg { text-align:center; margin:15px 0; padding:10px; border-radius:5px; background:#ffebee; color:#c62828; }
+        .msg { text-align:center; margin:15px 0;
+               padding:10px; border-radius:5px;
+               background:#ffebee; color:#c62828; }
     </style>
 </head>
 <body>
 <div class="box">
     <h2>Create Account</h2>
     <form action="register" method="post">
-        <input type="text" name="username" placeholder="Choose Username" required minlength="3">
-        <input type="password" name="password" placeholder="Choose Password" required minlength="6">
+        <input type="text" name="username" placeholder="Choose Username"
+               required minlength="3">
+        <input type="password" name="password" placeholder="Choose Password"
+               required minlength="6">
         <button type="submit">Register</button>
     </form>
 
-    <div id="errorMsg" class="msg" style="display:none;">Username already taken!</div>
+    <div id="errorMsg" class="msg" style="display:none;">
+        Username already taken!
+    </div>
 
     <div class="link">
         <a href="login.html">Already have an account? Login</a><br><br>
