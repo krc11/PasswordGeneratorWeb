@@ -22,11 +22,8 @@ public class GeneratePasswordServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("user") == null) {
-            response.sendRedirect("login.html");
-            return;
-        }
+        // create session if needed, but DON'T force login
+        HttpSession session = request.getSession();
 
         int length = Integer.parseInt(request.getParameter("length"));
         boolean includeUpper   = request.getParameter("upper") != null;
